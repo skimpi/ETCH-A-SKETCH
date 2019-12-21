@@ -2,7 +2,7 @@
 const grid = () => {
     const container = document.querySelector(".grid-container");
 
-    for (i = 0; i < 36; i++) {
+    for (i = 0; i < 56; i++) {
        let item = document.createElement('div');
        item.className = 'item'
        item.id = `grid${i}`;
@@ -15,53 +15,29 @@ const grid = () => {
 grid();
 
 
-const colorPalette = document.querySelector('.color-picker');
+var input = document.querySelectorAll('input');
 
-const colorGrid = () => {
-
-    for (i = 0; i < 2; i++) {
-        let colorSquare = document.createElement('div');
+for (let i = 0; i < input.length; i++){
+    input[i].addEventListener('input', function(){
+        let red = document.getElementById('red').value,
+            green = document.getElementById('green').value,
+            blue = document.getElementById('blue').value;
         
-        colorSquare.className = 'clrSquare';
-        colorSquare.id = `colorId${i}`;
-        colorPalette.appendChild(colorSquare);
-        
-    }
-} //creates two squares 
-
-colorGrid();
-
+        let display = document.getElementById('display');
+        display.style.background = "rgb("+ red +", "+ green +", "+ blue +")";
+    });
+}
 
 const container = document.querySelector('.grid-container'); //summons the class grid-container from index.html
+const item = container.querySelectorAll('.item');
 
-const color1 = document.querySelector('#colorId0');
-const color2 = document.querySelector('#colorId1');
-
-/*
-const item = container.querySelectorAll('.item'); //summons the class item as a nodelist (contains all 36 individual item)
-let nodeList = item;
-
-for (i = 0; i < item.length; i++) {
-    
-    nodeList[i].addEventListener('mouseover', function (q) {
-        q.target.style.backgroundColor = 'green';
-        q.target.className = 'colord';
-    });
-   
-}*/
-//traditional loop for changing the colors
-
-
-container.querySelectorAll('.item').forEach(item => {
-    item.addEventListener('mouseover', function (q) {
-        q.target.className = 'colord';
+const color = () => {
+    container.querySelectorAll('.item').forEach(item => {
+        item.addEventListener('mouseover', function (q) {
+            q.target.classList = 'colord';
+        })
     })
-})
-/*
-changeColor.addEventListener('click', function(){
-    text.classList.toggle('change')
-})
-*/
+};
 
-console.log(color1);
-console.log(color2);
+color();
+
