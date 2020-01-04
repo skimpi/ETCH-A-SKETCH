@@ -9,10 +9,17 @@
 </head>
 <body>
     <h1>etch a sketch</h1>
+    <button class='black'>black</button>
+    <button class='random'>random color</button>
+    <button class="resetButton">reset</button>
+    <button class="size">grid size</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p><button onclick="myFunction()">Try it</button></p>
+    <div id="test" style="height: 50px; background-color: lightblue;">Test Div</div>
+    <p>The computed styles for the test div are: <br><span id="demo"></span></p>
 
-    <div class="divvo">
-      <div class="grid-container"></div> 
-    </div>
+      <div id="container"></div> 
 
     <div class='picker'>
       red<input type="range" min='0' max="255" step="1" id="red" class="subpicker" value="115">
@@ -20,6 +27,10 @@
       blue<input type="range" min='0' max="255" step="1" id="blue" class="subpicker" value="162">
       <div id="display"></div>
     </div>
+
+   
+
+
 
     <script type="text/javascript" src="script.js"></script>
 </body>
